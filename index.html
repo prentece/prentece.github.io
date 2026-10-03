@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prentece.dev</title>
+
+    <meta name="description" content="Catálogo de projetos.">
+    <meta name="author" content="Prentece">
+    <link rel="canonical" href="https://prentece.dev/">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://prentece.dev/">
+    <meta property="og:title" content="prentece.dev">
+    <meta property="og:description" content="Catálogo de projetos.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/terminal.css">
+</head>
+<body>
+    <main id="term" aria-label="Terminal">
+        <div id="out"></div>
+        <div class="prompt-row">
+            <span class="prompt" id="prompt"></span>
+            <div class="input-wrap">
+                <span id="cli-display" class="cli-display" aria-hidden="true"></span>
+                <input id="cli" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" aria-label="Linha de comando" autofocus>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/projetos.js"></script>
+    <script src="js/sobre.js"></script>
+    <script src="js/contato.js"></script>
+    <script src="js/filesystem.js"></script>
+    <script src="js/terminal.js"></script>
+</body>
+</html>

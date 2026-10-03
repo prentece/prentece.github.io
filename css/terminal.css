@@ -1,0 +1,102 @@
+:root {
+    --bg: #0a0f0d;
+    --fg: #86efac;
+    --dim: #4a7c5b;
+    --bright: #bbf7d0;
+    --border: #1a3824;
+    --sel: #14532d;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: 'JetBrains Mono', 'DejaVu Sans Mono', Consolas, monospace;
+    font-size: 14px;
+    line-height: 1.4;
+    -webkit-font-smoothing: antialiased;
+}
+
+body { min-height: 100vh; cursor: text; }
+
+::selection { background: var(--sel); color: var(--bright); }
+
+#term {
+    padding: 12px 16px 48px;
+    text-align: left;
+}
+
+.line { white-space: pre-wrap; word-break: break-word; min-height: 1.4em; }
+.dim { color: var(--dim); }
+.bright { color: var(--bright); font-weight: 700; }
+.dir { color: var(--bright); font-weight: 700; }
+.file { color: var(--fg); }
+
+a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+a:hover { background: var(--fg); color: var(--bg); text-decoration: none; }
+
+/* Prompt cru em linha única: user@host:path$ > */
+.user { color: var(--bright); font-weight: 700; }
+.colon { color: var(--fg); }
+.path { color: var(--fg); font-weight: 700; }
+.sym { color: var(--fg); }
+.arrow { color: var(--dim); font-weight: 700; }
+
+.prompt-row { display: flex; align-items: baseline; white-space: pre; }
+.prompt { white-space: pre; flex-shrink: 0; }
+
+.input-wrap {
+    position: relative;
+    flex: 1;
+    display: inline-flex;
+    align-items: baseline;
+    min-width: 0;
+}
+
+.cli-display {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    white-space: pre;
+    overflow: hidden;
+    color: var(--fg);
+    font: inherit;
+    line-height: inherit;
+}
+
+.cmd-valid {
+    color: var(--bright);
+    font-weight: 700;
+}
+
+#cli {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    color: transparent;
+    caret-color: var(--fg);
+    font: inherit;
+    line-height: inherit;
+    padding: 0;
+    margin: 0;
+}
+
+#cli::selection {
+    background: var(--sel);
+    color: transparent;
+}
+
+/* Barra de rolagem personalizada */
+html { scrollbar-width: thin; scrollbar-color: var(--dim) var(--bg); }
+::-webkit-scrollbar { width: 12px; height: 12px; }
+::-webkit-scrollbar-track { background: var(--bg); border-left: 1px solid var(--border); }
+::-webkit-scrollbar-thumb { background: var(--border); border: 2px solid var(--bg); }
+::-webkit-scrollbar-thumb:hover { background: var(--dim); }
+::-webkit-scrollbar-corner { background: var(--bg); }
